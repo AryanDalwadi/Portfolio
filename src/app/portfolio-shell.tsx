@@ -13,9 +13,9 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <main className="min-h-screen bg-[#eef4f8] text-slate-950">
-      <aside className="fixed left-0 top-0 z-20 hidden h-screen w-64 p-4 lg:block">
-        <div className="flex h-full flex-col rounded-[20px] bg-white p-4 shadow-[0_18px_55px_rgba(15,23,42,0.08)]">
+    <main className="min-h-screen bg-[#eef4f8] text-slate-950 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)]">
+      <aside className="hidden p-4 lg:block">
+        <div className="sticky top-4 flex h-[calc(100vh-2rem)] flex-col rounded-[20px] bg-white p-4 shadow-[0_18px_55px_rgba(15,23,42,0.08)]">
           <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
             <ProfileAvatar variant="sidebar" />
             <div className="min-w-0">
@@ -78,7 +78,7 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      <div className="mx-auto max-w-7xl px-5 py-6 lg:ml-64 lg:px-10">
+      <div className="min-w-0 px-5 py-6 lg:px-10">
         <MobileHeader navItems={navItems} />
         {children}
         <ContactSection />

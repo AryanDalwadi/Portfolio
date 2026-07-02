@@ -101,4 +101,18 @@ textarea {
   .field {
     @apply w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-sky-300;
   }
+
+  .splash-progress {
+    animation: splash-progress-fill 4s ease-out forwards;
+  }
+
+  @keyframes splash-progress-fill {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
 }
