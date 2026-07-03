@@ -109,10 +109,17 @@ export function HeroSection() {
           </div>
 
           <div className="mt-8 grid gap-x-8 gap-y-5 md:grid-cols-2">
-            <HeroContactItem icon="mail" value={profile.email} />
-            <HeroContactItem icon="phone" value={profile.phone} />
+            <HeroContactItem
+              href={`mailto:${profile.email}`}
+              icon="mail"
+              value={profile.email}
+            />
+            <HeroContactItem
+              href={`tel:${profile.phone.replace(/\s/g, "")}`}
+              icon="phone"
+              value={profile.phone}
+            />
             <HeroContactItem icon="location" value={profile.location} />
-            <HeroContactItem icon="calendar" value="08/12/2000" />
           </div>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2">
@@ -407,18 +414,27 @@ export function ContactSection() {
 function HeroContactItem({
   icon,
   value,
+  href,
 }: {
   icon: "mail" | "phone" | "location" | "calendar";
   value: string;
+  href?: string;
 }) {
   return (
     <p className="flex items-center gap-3 text-[#364153]">
       <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-sky-50 text-sky-600">
         <HeroMiniIcon name={icon} />
       </span>
-      <span className="text-[16px] font-medium leading-6">
-        {value}
-      </span>
+      {href ? (
+        <a
+          className="text-[16px] font-medium leading-6 transition hover:text-sky-600"
+          href={href}
+        >
+          {value}
+        </a>
+      ) : (
+        <span className="text-[16px] font-medium leading-6">{value}</span>
+      )}
     </p>
   );
 }

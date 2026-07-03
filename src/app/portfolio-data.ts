@@ -314,7 +314,7 @@ export const experience = [
   {
     company: "Shersmart Infotech, Ahmedabad",
     role: "Intern",
-    duration: "Jul 2023 - Dec 2023",
+    duration: "JAN 2023 - Dec 2023",
     details:
       "Developed reusable and responsive UI components using React.js and Material UI, implemented CRUD operations through REST APIs, and used React hooks and state management for maintainable interfaces.",
     impact:
@@ -344,5 +344,7 @@ export const education = [
 
 export const certifications = [
   "Diploma in Multilingual Computer Programming - C-DAC, Jan 2019 - Jul 2019",
+  "HTML, CSS, JavaScript, React – Online Certification Course",
+  "React - The Complete Guide (incl. Hooks, React Router, Redux) - Udemy",
   "Udemy Python for Data Science and Data Analysis",
 ];
