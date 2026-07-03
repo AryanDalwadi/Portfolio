@@ -59,7 +59,6 @@ function FolderHomeView({
     <div>
       <div className="mb-6">
         <p className="section-kicker">Project Modules</p>
-        <h2 className="content-title mt-1">Open a module folder</h2>
         <p className="body-copy mt-2">
           Click a folder to view images from that CRM module.
         </p>
