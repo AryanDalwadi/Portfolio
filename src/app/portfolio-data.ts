@@ -326,11 +326,11 @@ export const experience = [
     role: "Intern",
     duration: "Jan 2022 - Apr 2022",
     details:
-      "Designed and developed a Bank Statement Analyser web application to automate extraction, analysis, and visualization of financial statements.",
+      "Designed and developed a Bank Statement Analyser web application to automate the upload, processing, analysis, and visualization of financial statements.",
     impact:
-      "Built PDF-to-CSV conversion, user authentication, real-time analytics, and interactive visualizations for creditworthiness analysis.",
-    technologies: "Python, Flask, Pandas, NumPy, SQLAlchemy, Dash, Matplotlib",
-  },
+      "Implemented secure user authentication, PDF upload, transaction management, real-time analytics dashboards, and interactive charts to support financial insights and creditworthiness analysis.",
+    technologies: "React.js, Node.js, Express.js, MySQL, Chart.js, REST API",
+  }
 ];
 
 export const education = [
