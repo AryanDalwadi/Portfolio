@@ -5,6 +5,7 @@ import { ExperienceAccordion } from "./experience-accordion";
 import {
   certifications,
   education,
+  experience,
   profile,
   projects,
   techGroups,
@@ -44,32 +45,17 @@ const services = [
   },
 ];
 
-const processSteps = [
-  {
-    title: "Requirement & Discovery",
-    text: "Understand business goals, user flows, data needs, third-party integrations, and technical constraints before planning the build.",
-  },
-  {
-    title: "Architecture & Database Planning",
-    text: "Design API structure, database schema, authentication flow, RBAC rules, and scalable module boundaries.",
-  },
-  {
-    title: "Frontend Development",
-    text: "Build responsive React.js interfaces with reusable components, clean state management, and user-friendly workflows.",
-  },
-  {
-    title: "Backend API Development",
-    text: "Develop secure Node.js and Express.js APIs with validation, error handling, standardized responses, and optimized queries.",
-  },
-  {
-    title: "Testing & Optimization",
-    text: "Test application flows, optimize API latency and SQL performance, and improve reliability before release.",
-  },
-  {
-    title: "Deployment & Maintenance",
-    text: "Prepare production-ready builds, configure runtime tools, monitor issues, and support ongoing improvements.",
-  },
-];
+function parseProjectEntry(entry: string) {
+  const separatorIndex = entry.indexOf(": ");
+  if (separatorIndex === -1) {
+    return { title: entry, description: "" };
+  }
+
+  return {
+    title: entry.slice(0, separatorIndex),
+    description: entry.slice(separatorIndex + 2),
+  };
+}
 
 export function HeroSection() {
   return (
@@ -100,9 +86,16 @@ export function HeroSection() {
         </div>
 
         <div className="rounded-[2rem] bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
-          <div className="flex items-center gap-5">
-            <ProfileAvatar variant="hero" />
-            <div>
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-5">
+            <div className="flex justify-center md:justify-start">
+              <div className="md:hidden">
+                <ProfileAvatar variant="contact" />
+              </div>
+              <div className="hidden md:block">
+                <ProfileAvatar variant="hero" />
+              </div>
+            </div>
+            <div className="w-full min-w-0">
               <span className="inline-block rotate-[-7deg] rounded-lg bg-sky-500 px-4 py-2 text-sm font-bold text-white">
                 Hello there!!!
               </span>
@@ -115,14 +108,14 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+          <div className="mt-8 grid gap-x-8 gap-y-5 md:grid-cols-2">
             <HeroContactItem icon="mail" value={profile.email} />
             <HeroContactItem icon="phone" value={profile.phone} />
             <HeroContactItem icon="location" value={profile.location} />
             <HeroContactItem icon="calendar" value="08/12/2000" />
           </div>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             <HeroStat
               icon="rocket"
               title="80+ API Modules Built"
@@ -167,38 +160,75 @@ export function ServicesSection() {
   );
 }
 
-export function ProcessSection() {
+export function WhyMeSection() {
+  const currentRole = experience[0];
+  const [company, location = "Ahmedabad, India"] =
+    currentRole.company.split(", ");
+  const orgResponsibilities =
+    "responsibilities" in currentRole && currentRole.responsibilities
+      ? currentRole.responsibilities
+      : [currentRole.details, currentRole.impact];
+  const projectEntries = currentRole.projects ?? [];
+
   return (
     <section className="section">
       <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
         <div>
-          <SectionKicker>Working Process</SectionKicker>
+          <SectionKicker>Why Me</SectionKicker>
           <h2 className="display-title mt-4 max-w-sm">
-            From Idea
-            <br />
-            to Execution
+            Roles &amp; Responsibilities
           </h2>
+          <p className="body-copy mt-5 max-w-md">
+            Full Stack Developer at {company}, building and scaling SaaS-based
+            web products with React.js, Node.js, Express.js, and MSSQL.
+          </p>
+
+          <div className="mt-6 rounded-xl bg-white p-5 shadow-[0_16px_60px_rgba(15,23,42,0.06)]">
+            <p className="text-xs font-bold uppercase tracking-[0.08em] text-sky-600">
+              {currentRole.role}
+            </p>
+            <h3 className="content-title mt-2">{company}</h3>
+            <p className="body-copy mt-1">{location}</p>
+            <p className="mt-3 text-xs font-bold uppercase tracking-[0.08em] text-[#364153]">
+              {currentRole.duration}
+            </p>
+          </div>
+
+          <ul className="mt-6 space-y-3">
+            {orgResponsibilities.map((item) => (
+              <li key={item} className="body-copy flex gap-3">
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-sky-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-700"
+            href="/experience"
+          >
+            View full experience
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
-        <div className="divide-y divide-slate-200">
-          {processSteps.map((step, index) => (
-            <article
-              key={step.title}
-              className="grid gap-4 py-6 first:pt-0 md:grid-cols-[120px_1fr]"
-            >
-              <p className="text-sm font-black uppercase tracking-tight text-slate-900">
-                [STEP-{index + 1}]
-              </p>
-              <div>
-                <h3 className="content-title">
-                  {step.title}
-                </h3>
-                <p className="body-copy mt-4 max-w-2xl">
-                  {step.text}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="space-y-4">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#364153]">
+            Project Responsibilities
+          </p>
+          {projectEntries.map((entry) => {
+            const { title, description } = parseProjectEntry(entry);
+
+            return (
+              <article
+                key={title}
+                className="rounded-xl bg-white p-6 shadow-[0_16px_60px_rgba(15,23,42,0.06)]"
+              >
+                <h3 className="content-title">{title}</h3>
+                <p className="body-copy mt-3">{description}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

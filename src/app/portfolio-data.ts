@@ -290,6 +290,13 @@ export const experience = [
     company: "Prashi Solution, Ahmedabad",
     role: "Full Stack Developer",
     duration: "Dec 2023 - Present",
+    responsibilities: [
+      "Engineered and scaled a multi-tenant SaaS CRM platform (CRM Emperor) with Real Estate, Billing, CMS, and Admin modules on isolated tenant databases.",
+      "Built and maintained 80+ RESTful API modules using Node.js and Express with validation, error handling middleware, and standardized response models.",
+      "Implemented JWT-based authentication with AES-encrypted request bodies, CORS configuration, Helmet.js security headers, and XSS prevention.",
+      "Designed RBAC-based menu-driven authorization for secure, role-scoped access control across all modules.",
+      "Optimized backend workflows and MSSQL queries, reducing API response time by approx. 30% and critical query execution time by approx. 40%.",
+    ],
     details:
       "Engineered and scaled CRM Emperor, Haulerr, Fusion Pizza, Esha IVF, File Manager, and Loan Processing modules using React.js, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, and third-party APIs.",
     impact:

@@ -1,8 +1,8 @@
 import { PortfolioShell } from "./portfolio-shell";
 import {
   HeroSection,
-  ProcessSection,
   ServicesSection,
+  WhyMeSection,
 } from "./portfolio-sections";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
     <PortfolioShell>
       <HeroSection />
       <ServicesSection />
-      <ProcessSection />
+      <WhyMeSection />
     </PortfolioShell>
   );
 }
