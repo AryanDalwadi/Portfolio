@@ -291,11 +291,13 @@ export const experience = [
     role: "Full Stack Developer",
     duration: "Dec 2023 - Present",
     responsibilities: [
-      "Engineered and scaled a multi-tenant SaaS CRM platform (CRM Emperor) with Real Estate, Billing, CMS, and Admin modules on isolated tenant databases.",
-      "Built and maintained 80+ RESTful API modules using Node.js and Express with validation, error handling middleware, and standardized response models.",
-      "Implemented JWT-based authentication with AES-encrypted request bodies, CORS configuration, Helmet.js security headers, and XSS prevention.",
-      "Designed RBAC-based menu-driven authorization for secure, role-scoped access control across all modules.",
-      "Optimized backend workflows and MSSQL queries, reducing API response time by approx. 30% and critical query execution time by approx. 40%.",
+      "Engineered and scaled a multi-tenant SaaS CRM platform (CRM Emperor) supporting Real Estate, Billing, CMS, and Admin modules used by multiple clients on isolated tenant databases.",
+      "Built and maintained 80+ RESTful API modules using Node.js and Express with structured error handling middleware, request validation, and standardized response models.",
+      "Architected and optimized RESTful APIs using Node.js and Express, enhancing scalability and reducing response latency.",
+      "Implemented JWT-based authentication with AES-encrypted request bodies, CORS configuration, Helmet.js security headers, and XSS prevention across all API endpoints.",
+      "Designed and enforced RBAC-based menu-driven authorization, ensuring secure, role-scoped access control across all modules.",
+      "Optimized backend workflows, reducing API response time by approx. 30% and improving data processing efficiency.",
+      "Optimized MSSQL queries, reducing execution time by approx. 40% for critical operations, including query optimization and schema design.",
     ],
     details:
       "Engineered and scaled CRM Emperor, Haulerr, Fusion Pizza, Esha IVF, File Manager, and Loan Processing modules using React.js, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, and third-party APIs.",
@@ -303,34 +305,43 @@ export const experience = [
       "Built 80+ REST API modules, reduced API response time by approx. 30%, optimized MSSQL queries by approx. 40%, and delivered secure JWT/RBAC-based workflows.",
     technologies: "React.js, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3",
     projects: [
-      "CRM Emperor: Built and scaled a multi-tenant SaaS CRM with Real Estate, Billing, CMS, and Admin modules using isolated tenant databases, JWT authentication, AES-encrypted request bodies, CORS, Helmet.js, XSS prevention, and RBAC-based menu authorization.",
-      "Haulerr: Designed a logistics and delivery platform with real-time rider tracking, dynamic fare calculation with GST/IGST, Google Maps polygon zone mapping, WhatsApp OTP/order notifications through Wabus webhooks, Redis synchronization, and Firebase push notifications.",
-      "Fusion Pizza: Engineered billing and inventory workflows for multi-outlet restaurants, including real-time GST computation, automated PDF invoice generation, inventory dashboards, audit logs, and compliance reporting.",
-      "Esha IVF Management: Developed healthcare modules for patient lifecycle, appointments, lab workflows, secure admin dashboards, and automated Firebase/WhatsApp communication supporting 200+ patient workflows daily.",
-      "File Manager System: Built document mapping workflows linking Excel data with PDFs using barcode logic, dynamic folder CRUD operations, optimized search, and support for 10,000+ files.",
-      "Loan Processing Module: Developed a multi-step loan workflow handling 100+ applications daily with approval hierarchy, AWS S3 document uploads, borrower/surety management, notifications, and PDF generation.",
+      "Haulerr: Designed and deployed a full-stack logistics platform with real-time rider tracking and alert system, dynamic fare calculation with GST/IGST logic, Google Maps polygon zone mapping, Wabus WhatsApp OTP/order notifications via webhooks, and Redis/Firebase real-time synchronization with push notifications.",
+      "Fusion Pizza: Engineered a billing and inventory system with real-time GST computation and automated PDF invoice generation, multi-outlet inventory tracking dashboards, and audit logs for compliance and transaction reporting.",
+      "IVF Management System (Esha IVF): Developed a scalable healthcare management system for patient lifecycle, appointments, and lab workflows, handling 200+ patient workflows daily with Firebase/WhatsApp automated communication and secure admin dashboards.",
+      "File Manager System: Built a document mapping system linking Excel data with PDFs via barcode logic, supporting 10,000+ files with optimized search and dynamic folder CRUD operations.",
+      "Loan Processing Module: Developed a multi-step loan workflow system handling 100+ applications daily with approval hierarchy, AWS S3 document uploads, borrower/surety management, notifications, and PDF generation.",
     ],
   },
   {
     company: "Shersmart Infotech, Ahmedabad",
     role: "Intern",
-    duration: "JAN 2023 - Dec 2023",
+    duration: "Jul 2023 - Dec 2023",
     details:
-      "Developed reusable and responsive UI components using React.js and Material UI, implemented CRUD operations through REST APIs, and used React hooks and state management for maintainable interfaces.",
+      "Developed reusable and responsive UI components using React.js and Material UI, implemented CRUD operations via REST APIs, and leveraged React hooks and state management to enhance UI performance and maintainability.",
     impact:
       "Improved UI performance, responsiveness, and component reusability across application screens.",
     technologies: "React.js, Material UI, REST APIs, React Hooks",
+  },
+  {
+    company: "Parshi Emerging Technologies PVT LTD, Remote",
+    role: "Intern",
+    duration: "Jul 2022 - Dec 2022",
+    details:
+      "Learned Object-Oriented Programming (OOP) concepts in Python and developed a strong understanding of classes, objects, inheritance, polymorphism, and encapsulation.",
+    impact:
+      "Gained hands-on experience with NumPy, Pandas, and other essential Python libraries for data manipulation, analysis, and problem-solving using the Python interpreter.",
+    technologies: "Python, OOP, NumPy, Pandas",
   },
   {
     company: "Linear Loop Private Limited, Ahmedabad",
     role: "Intern",
     duration: "Jan 2022 - Apr 2022",
     details:
-      "Designed and developed a Bank Statement Analyser web application to automate the upload, processing, analysis, and visualization of financial statements.",
+      "Designed and developed a Bank Statement Analyser web application to automate extraction, analysis, and visualization of financial statements for creditworthiness assessment.",
     impact:
-      "Implemented secure user authentication, PDF upload, transaction management, real-time analytics dashboards, and interactive charts to support financial insights and creditworthiness analysis.",
-    technologies: "React.js, Node.js, Express.js, MySQL, Chart.js, REST API",
-  }
+      "Built modules for PDF-to-CSV conversion, user authentication, and real-time analytics using Python, Flask, Pandas, NumPy, SQLAlchemy, Dash, and Matplotlib.",
+    technologies: "Python, Flask, Pandas, NumPy, SQLAlchemy, Dash, Matplotlib",
+  },
 ];
 
 export const education = [
