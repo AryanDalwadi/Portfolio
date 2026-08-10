@@ -72,6 +72,7 @@ export function SplashScreen({ children }: { children: ReactNode }) {
                     className="object-contain"
                     fill
                     priority
+                    sizes="96px"
                     src="/apple-touch-icon.png"
                   />
                 </div>
