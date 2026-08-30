@@ -187,14 +187,15 @@ export default async function Image() {
                 background: "#eef4f8",
               }}
             >
-              <img
-                alt="CRM Emperor dashboard"
-                src={crmDashboard}
+              <div
+                aria-label="CRM Emperor dashboard"
+                role="img"
                 style={{
                   width: "34%",
                   height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "top left",
+                  backgroundImage: `url(${crmDashboard})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "top left",
                   borderRadius: "16px",
                   border: "1px solid #dbeafe",
                 }}
@@ -207,26 +208,28 @@ export default async function Image() {
                   width: "66%",
                 }}
               >
-                <img
-                  alt="Haulerr rider dashboard"
-                  src={haulerrDashboard}
+                <div
+                  aria-label="Haulerr rider dashboard"
+                  role="img"
                   style={{
                     width: "100%",
                     height: "48%",
-                    objectFit: "cover",
-                    objectPosition: "top left",
+                    backgroundImage: `url(${haulerrDashboard})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top left",
                     borderRadius: "16px",
                     border: "1px solid #dbeafe",
                   }}
                 />
-                <img
-                  alt="Fusion Pizza home screen"
-                  src={fusionHome}
+                <div
+                  aria-label="Fusion Pizza home screen"
+                  role="img"
                   style={{
                     width: "100%",
                     height: "48%",
-                    objectFit: "cover",
-                    objectPosition: "top left",
+                    backgroundImage: `url(${fusionHome})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top left",
                     borderRadius: "16px",
                     border: "1px solid #dbeafe",
                   }}

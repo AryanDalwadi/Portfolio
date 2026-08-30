@@ -96,7 +96,7 @@ export function HeroSection() {
               </div>
             </div>
             <div className="w-full min-w-0">
-              <span className="inline-block rotate-[-7deg] rounded-lg bg-sky-500 px-4 py-2 text-sm font-bold text-white">
+              <span className="btn-badge">
                 Hello there!!!
               </span>
               <p className="body-copy mt-5">
@@ -288,8 +288,8 @@ export function ProjectsSection() {
               <h3 className="content-title">{project.title}</h3>
               <p className="body-copy mt-1 line-clamp-2">{project.overview}</p>
               <Link
+                className="btn-primary mt-5 inline-flex items-center gap-2"
                 href={`/projects/${project.slug}`}
-                className="mt-5 inline-flex items-center gap-2 rounded border border-[#D1D5DC99] px-4 py-2 text-sm font-medium text-[#030712] transition hover:bg-slate-50"
               >
                 View Shot
                 <span aria-hidden="true">→</span>
