@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SplashScreen } from "./splash-screen";
+import { profile } from "./portfolio-data";
 
 const siteUrl = "https://aryan-dalwadi-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Aryan Dalwadi | Full Stack Developer",
-  description:
-    "Portfolio of Aryan Dalwadi — Full Stack Developer specializing in React.js, Node.js, Express.js, MSSQL, SaaS platforms, REST APIs, and real-time systems.",
+  description: profile.summary,
   icons: {
     icon: [{ url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title: "Aryan Dalwadi | Full Stack Developer",
-    description:
-      "Explore my Full Stack Developer portfolio featuring enterprise SaaS applications, REST APIs, CRM systems, logistics platforms, and scalable web solutions.",
+    description: profile.summary,
     url: siteUrl,
     siteName: "Aryan Dalwadi Portfolio",
     locale: "en_US",
@@ -25,8 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aryan Dalwadi | Full Stack Developer",
-    description:
-      "Portfolio showcasing enterprise SaaS applications built with React.js, Node.js, Express.js, and MSSQL.",
+    description: profile.summary,
   },
 };
 

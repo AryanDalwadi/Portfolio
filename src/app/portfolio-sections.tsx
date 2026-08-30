@@ -15,32 +15,32 @@ import { ProfileAvatar } from "./profile-avatar";
 const services = [
   {
     title: "Frontend Development",
-    text: "Building fast, responsive React.js interfaces with reusable components and clean state management.",
+    text: "Building responsive and reusable React.js interfaces with Redux Toolkit, Context API, React Router, and Material UI.",
     icon: "frontend",
   },
   {
     title: "Backend APIs",
-    text: "Designing scalable Node.js and Express.js REST APIs with validation, error handling, and secure patterns.",
+    text: "Designing and optimizing 80+ RESTful Node.js and Express.js APIs with validation, error handling, and scalable architecture.",
     icon: "backend",
   },
   {
     title: "Database Optimization",
-    text: "Creating efficient MSSQL and MySQL schemas, stored procedures, and optimized queries for critical workflows.",
+    text: "Creating efficient MSSQL and MySQL schemas, stored procedures, and optimized queries with measurable performance gains.",
     icon: "database",
   },
   {
     title: "SaaS Architecture",
-    text: "Developing multi-tenant platforms with role-based access, isolated tenant data, and modular business flows.",
+    text: "Developing multi-tenant platforms with isolated tenant databases, RBAC authorization, and modular enterprise workflows.",
     icon: "saas",
   },
   {
     title: "API Integrations",
-    text: "Integrating Google Maps, WhatsApp APIs, Firebase, webhooks, and third-party services into production apps.",
+    text: "Integrating Google Maps, WhatsApp Business API, Firebase, AWS S3, webhooks, and third-party services into production apps.",
     icon: "integration",
   },
   {
-    title: "Real-Time Systems",
-    text: "Implementing live tracking, push notifications, Redis synchronization, and automated communication workflows.",
+    title: "DevOps & Collaboration",
+    text: "Working with Git, Azure DevOps, pull requests, code reviews, CI/CD, and Agile/Scrum sprint workflows.",
     icon: "realtime",
   },
 ];
@@ -57,21 +57,31 @@ function parseProjectEntry(entry: string) {
   };
 }
 
+function splitSummary(summary: string) {
+  return summary
+    .split(/(?<=[.!?])\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
 export function HeroSection() {
+  const summaryParagraphs = splitSummary(profile.summary);
+
   return (
     <section className="scroll-mt-8 pb-8 pt-3 md:pb-10 md:pt-5">
       <SectionKicker>Meet {profile.name}</SectionKicker>
-      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <h1 className="display-title mt-2 max-w-3xl">
             Full Stack Developer building scalable React and Node.js products.
           </h1>
-          <p className="body-copy mt-4 max-w-2xl text-[18px] leading-7">
-            I have {profile.experience} years of experience building web
-            applications with React.js, Node.js, Express.js, and MSSQL, with a
-            focus on REST APIs, real-time systems, SaaS architecture, and secure
-            integrations.
-          </p>
+          <div className="mt-4 max-w-2xl space-y-4">
+            {summaryParagraphs.map((paragraph) => (
+              <p key={paragraph} className="body-copy text-base leading-7 md:text-[17px]">
+                {paragraph}
+              </p>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/projects">
               View Projects
@@ -85,25 +95,25 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-5">
-            <div className="flex justify-center md:justify-start">
-              <div className="md:hidden">
+        <div className="rounded-[2rem] bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:sticky lg:top-8">
+          <div className="w-full min-w-0 text-left">
+            <div className="sm:hidden">
+              <span className="btn-badge w-fit rotate-[-7deg]">Hello there!!!</span>
+              <div className="mt-5 flex flex-col items-center gap-5">
                 <ProfileAvatar variant="contact" />
-              </div>
-              <div className="hidden md:block">
-                <ProfileAvatar variant="hero" />
+                <p className="body-copy leading-6">{profile.summaryShort}</p>
               </div>
             </div>
-            <div className="w-full min-w-0">
-              <span className="btn-badge">
+
+            <div className="hidden sm:grid sm:grid-cols-[auto_1fr] sm:gap-x-5">
+              <div className="row-start-2 mt-5 shrink-0">
+                <ProfileAvatar variant="hero" />
+              </div>
+              <span className="btn-badge col-start-2 row-start-1 w-fit justify-self-start rotate-[-7deg]">
                 Hello there!!!
               </span>
-              <p className="body-copy mt-5">
-                I&apos;m a Full Stack Developer with 3 years of experience
-                working with React.js and Node.js. I enjoy building fast,
-                user-friendly web applications, solving real-world problems, and
-                continuously learning new technologies to improve my skills.
+              <p className="body-copy col-start-2 row-start-2 mt-5 leading-6">
+                {profile.summaryShort}
               </p>
             </div>
           </div>
@@ -186,8 +196,9 @@ export function WhyMeSection() {
             Roles &amp; Responsibilities
           </h2>
           <p className="body-copy mt-5 max-w-md">
-            Full Stack Developer at {company}, building and scaling SaaS-based
-            web products with React.js, Node.js, Express.js, and MSSQL.
+            Full Stack Developer at {company}, building SaaS CRM, logistics,
+            billing, healthcare, document management, and loan processing
+            platforms with React.js, Node.js, Express.js, and MSSQL.
           </p>
 
           <div className="mt-6 rounded-xl bg-white p-5 shadow-[0_16px_60px_rgba(15,23,42,0.06)]">
@@ -354,11 +365,7 @@ export function ResumeSection() {
         <div className="mt-3 flex flex-wrap items-center justify-between gap-5">
           <div>
             <h2 className="section-title">Resume download area</h2>
-            <p className="body-copy mt-4 max-w-2xl">
-              Download Aryan Dalwadi&apos;s full stack developer resume,
-              including experience with React.js, Node.js, Express.js, MSSQL,
-              real-time systems, SaaS platforms, and API integrations.
-            </p>
+            <p className="body-copy mt-4 max-w-2xl">{profile.summary}</p>
           </div>
           <a className="btn-primary" href="/Aryan-Dalwadi-Resume.pdf" download>
             Download Resume
