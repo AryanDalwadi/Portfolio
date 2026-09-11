@@ -26,7 +26,7 @@ export const profile: Profile = {
   location: "Ahmedabad, India",
   phone: "+91 9558046979",
   email: "aryandalwadi@gmail.com",
-  github: "https://github.com/AryanDalwadi?tab=repositories",
+  github: "https://github.com/AryanDalwadi",
   linkedin: "https://www.linkedin.com/in/aryan-dalwadi/",
   experience: "3 years",
   photo: "/profile/aryan-dalwadi.png",
@@ -54,10 +54,10 @@ export const techGroups = [
       "CSS3",
       "Redux Toolkit",
       "Context API",
-      "Material UI",
+      "Material-UI (MUI)",
       "React Router",
       "React Hook Form",
-      "Responsive UI",
+      "Responsive UI Development",
     ],
   },
   {
@@ -66,9 +66,9 @@ export const techGroups = [
       "Node.js",
       "Express.js",
       "REST APIs",
+      "GraphQL",
       "JWT Authentication",
       "RBAC",
-      "Webhooks",
       "Third-Party API Integration",
     ],
   },
@@ -86,6 +86,7 @@ export const techGroups = [
     title: "Security",
     items: [
       "JWT Auth",
+      "OAuth 2.0",
       "CORS",
       "Helmet.js",
       "XSS Prevention",
@@ -95,7 +96,15 @@ export const techGroups = [
   },
   {
     title: "Testing & API Tools",
-    items: ["Postman", "REST API Testing", "API Validation", "Debugging"],
+    items: [
+      "Jest",
+      "React Testing Library (RTL)",
+      "Unit Testing",
+      "Postman",
+      "REST API Testing",
+      "API Validation",
+      "Debugging",
+    ],
   },
   {
     title: "Version Control & DevOps",
@@ -105,31 +114,28 @@ export const techGroups = [
       "Azure DevOps",
       "Pull Requests",
       "Code Reviews",
-      "CI/CD",
+      "CI/CD Pipelines",
       "PM2",
     ],
   },
   {
-    title: "Cloud & Integrations",
-    items: [
-      "AWS S3",
-      "Firebase FCM",
-      "Redis",
-      "Node-Cron",
-      "Google Maps API",
-      "WhatsApp Business API",
-    ],
+    title: "Cloud & Tools",
+    items: ["AWS S3", "Firebase (FCM)", "Redis", "Node-Cron", "Google Maps API"],
   },
   {
     title: "Architecture & Practices",
     items: [
-      "API Optimization",
-      "Real-time Systems",
+      "Microservices Architecture",
       "Multi-Tenant Architecture",
+      "Component-Based Architecture",
+      "API Optimization",
+      "Real-Time Systems",
       "System Design",
-      "Agile/Scrum",
-      "SDLC",
     ],
+  },
+  {
+    title: "Development Practices",
+    items: ["Agile/Scrum", "SDLC", "Git-based Development", "Debugging"],
   },
 ];
 
@@ -367,6 +373,7 @@ export const experience = [
       "Optimized backend workflows and MSSQL queries, reducing API response time by ~30% and critical query execution time by ~40% across key operations.",
       "Optimized React.js components and frontend workflows to improve rendering performance, responsiveness, and maintainability across enterprise applications.",
       "Ensured responsive and cross-browser compatible React interfaces while following accessibility practices for consistent user experiences.",
+      "Gained hands-on experience implementing unit tests using Jest for Node.js services and Jest with React Testing Library (RTL) for React components, improving understanding of code reliability and test coverage.",
       "Managed Git-based development workflows using Azure DevOps, including branch creation, pull requests, code reviews, and controlled code merging.",
       "Participated in sprint planning, daily stand-ups, task estimation, code reviews, and sprint retrospectives.",
       "Collaborated with QA, frontend/backend developers, and project teams to understand requirements, troubleshoot issues, and deliver application features.",
@@ -374,9 +381,9 @@ export const experience = [
     details:
       "Project experience across SaaS CRM, logistics and delivery, billing and inventory, healthcare, document management, and loan processing platforms using React.js, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, and third-party APIs.",
     impact:
-      "Delivered 80+ REST API modules, ~30% faster APIs, ~40% faster critical SQL queries, multi-tenant SaaS CRM workflows, and secure JWT/RBAC-based full-stack solutions.",
+      "Delivered 80+ REST API modules, ~30% faster APIs, ~40% faster critical SQL queries, multi-tenant SaaS CRM workflows, secure JWT/RBAC access, and unit tests with Jest and React Testing Library.",
     technologies:
-      "React.js, Redux Toolkit, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, Azure DevOps, Git",
+      "React.js, Redux Toolkit, Node.js, Express.js, GraphQL, MSSQL, Jest, React Testing Library, Redis, Firebase, AWS S3, Azure DevOps, Git",
     projects: [
       "CRM Emperor: Engineered and scaled a multi-tenant SaaS CRM with Real Estate, Billing, CMS, and Admin modules, responsive React.js interfaces, 80+ RESTful APIs, JWT/AES authentication, RBAC authorization, and optimized MSSQL workflows.",
       "Haulerr: Developed responsive React.js interfaces for order management and rider tracking, deployed a logistics platform with real-time tracking, GST/IGST fare logic, Google Maps polygon zones, and WhatsApp webhook notifications.",

@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: "Backend APIs",
-    text: "Designing and optimizing 80+ RESTful Node.js and Express.js APIs with validation, error handling, and scalable architecture.",
+    text: "Designing and optimizing 80+ RESTful Node.js and Express.js APIs, with GraphQL, validation, error handling, and scalable architecture.",
     icon: "backend",
   },
   {
@@ -30,7 +30,7 @@ const services = [
   },
   {
     title: "SaaS Architecture",
-    text: "Developing multi-tenant platforms with isolated tenant databases, RBAC authorization, and modular enterprise workflows.",
+    text: "Developing multi-tenant and microservices-ready platforms with isolated tenant databases, RBAC authorization, and modular enterprise workflows.",
     icon: "saas",
   },
   {
@@ -39,8 +39,8 @@ const services = [
     icon: "integration",
   },
   {
-    title: "DevOps & Collaboration",
-    text: "Working with Git, Azure DevOps, pull requests, code reviews, CI/CD, and Agile/Scrum sprint workflows.",
+    title: "Testing & DevOps",
+    text: "Writing Jest and React Testing Library unit tests, plus Git, Azure DevOps, pull requests, CI/CD pipelines, and Agile/Scrum workflows.",
     icon: "realtime",
   },
 ];
