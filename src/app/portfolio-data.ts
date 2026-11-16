@@ -18,11 +18,11 @@ type Profile = {
 export const profile: Profile = {
   name: "Aryan Dalwadi",
   title: "Full Stack Developer",
-  subtitle: "React.js | Node.js",
+  subtitle: "React.js | Node.js | TypeScript | PostgreSQL",
   summary:
-    "Full Stack Developer with 3 years of experience building scalable web applications using React.js, Node.js, Express.js, and MSSQL. Experienced in developing responsive and reusable React interfaces, state management with Redux Toolkit and Context API, RESTful API integration, authentication and authorization, database optimization, and third-party integrations. Strong focus on performance, security, maintainability, debugging, and delivering scalable full-stack solutions.",
+    "Full Stack Developer with 3 years of experience building enterprise-grade web applications using React.js, TypeScript, Node.js, Express.js, and MSSQL. Delivered 80+ RESTful API modules across SaaS CRM, logistics, healthcare, and fintech platforms, with measurable gains in API response time (~30%) and query execution (~40%). Built an event-driven microservices platform using Kafka, PostgreSQL, Redis, and Docker, with Razorpay payment integration and a transactional outbox pattern. Experienced in multi-tenant architecture, JWT/RBAC security, Redux Toolkit, AWS S3, and Agile/Scrum delivery on Azure DevOps. Proficient in AI-assisted development with Cursor, Google Antigravity, and ChatGPT for code generation, debugging, refactoring, and productivity.",
   summaryShort:
-    "I am Aryan Dalwadi, a Full Stack Developer with 3 years of experience building scalable web applications with React.js, Node.js, Express.js, and MSSQL. I focus on performance, security, maintainability, and delivering user-friendly full-stack solutions.",
+    "I am Aryan Dalwadi, a Full Stack Developer with 3 years of experience building enterprise applications with React.js, TypeScript, Node.js, and PostgreSQL. I also ship event-driven microservices and use AI-assisted development to move faster.",
   location: "Ahmedabad, India",
   phone: "+91 9558046979",
   email: "aryandalwadi@gmail.com",
@@ -44,7 +44,7 @@ export const navItems: NavItem[] = [
 export const techGroups = [
   {
     title: "Programming Languages",
-    items: ["JavaScript (ES6+)", "SQL"],
+    items: ["JavaScript (ES6+)", "TypeScript", "SQL"],
   },
   {
     title: "Frontend",
@@ -57,6 +57,7 @@ export const techGroups = [
       "Material-UI (MUI)",
       "React Router",
       "React Hook Form",
+      "Tailwind CSS",
       "Responsive UI Development",
     ],
   },
@@ -70,6 +71,9 @@ export const techGroups = [
       "JWT Authentication",
       "RBAC",
       "Third-Party API Integration",
+      "Kafka",
+      "Transactional Outbox",
+      "Idempotent Consumers",
     ],
   },
   {
@@ -80,6 +84,7 @@ export const techGroups = [
       "Query Optimization",
       "Stored Procedures",
       "Schema Design",
+      "PostgreSQL",
     ],
   },
   {
@@ -92,6 +97,7 @@ export const techGroups = [
       "XSS Prevention",
       "AES Encryption",
       "SQL Injection Prevention",
+      "HMAC Webhook Verification",
     ],
   },
   {
@@ -120,7 +126,20 @@ export const techGroups = [
   },
   {
     title: "Cloud & Tools",
-    items: ["AWS S3", "Firebase (FCM)", "Redis", "Node-Cron", "Google Maps API"],
+    items: [
+      "AWS S3",
+      "Firebase (FCM)",
+      "Redis",
+      "Node-Cron",
+      "Google Maps API",
+      "Google Drive API",
+      "Docker",
+      "Docker Compose",
+      "Railway",
+      "Neon",
+      "Upstash",
+      "GitHub Actions",
+    ],
   },
   {
     title: "Architecture & Practices",
@@ -131,15 +150,54 @@ export const techGroups = [
       "API Optimization",
       "Real-Time Systems",
       "System Design",
+      "Event-Driven Microservices",
+      "API Gateway",
     ],
   },
   {
     title: "Development Practices",
     items: ["Agile/Scrum", "SDLC", "Git-based Development", "Debugging"],
   },
+  {
+    title: "AI-Assisted Development",
+    items: [
+      "Cursor IDE",
+      "Google Antigravity",
+      "ChatGPT",
+      "Prompt Engineering",
+      "AI-Assisted Code Generation",
+      "Code Refactoring",
+    ],
+  },
 ];
 
 export const projects = [
+  {
+    title: "Arcade Booking",
+    slug: "arcade-booking",
+    overview:
+      "An event-driven microservices booking platform with a React and TypeScript client for identity, catalog, booking, and payment workflows.",
+    problem:
+      "Booking, payment, and notifications needed independent services that stay consistent when events are replayed, without duplicate bookings or repeated notifications.",
+    solution:
+      "Built an API gateway in front of services that own their own logic and data, using versioned Kafka events, a PostgreSQL transactional outbox, and idempotent consumers, with Razorpay test checkout and signed webhooks.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Kafka",
+      "Redis",
+      "Razorpay",
+    ],
+    features: [
+      "React and TypeScript client with an API gateway for identity, catalog, booking, and payment",
+      "Versioned Kafka events, PostgreSQL transactional outbox, and idempotent consumers",
+      "Booking consistency that prevents duplicate bookings and repeated notifications during event replay",
+      "Services on Railway, PostgreSQL on Neon, Redis on Upstash, and signed Razorpay webhooks",
+    ],
+  },
   {
     title: "CRM Emperor",
     slug: "crm-emperor",
@@ -311,17 +369,17 @@ export const projects = [
       "/projects/file-manager-system/pdf-report.png",
     ],
     overview:
-      "A document management system linking Excel records with PDFs through barcode-based logic and optimized search.",
+      "A hybrid document module for the CRM that stores new uploads in Google Drive while keeping legacy server and SFTP files available.",
     problem:
-      "Teams needed to map spreadsheet records to PDF files, manage large document sets, and search through 10,000+ files efficiently.",
+      "Teams needed Google Drive uploads with resumable progress, retry, and cancel, without breaking existing server and SFTP document URLs, plus safer folder deletion and restore.",
     solution:
-      "Built barcode-based document mapping, dynamic folder CRUD operations, and optimized search workflows for large-scale file management.",
-    stack: ["React.js", "Node.js", "Express.js", "MSSQL", "Excel", "Barcode Processing"],
+      "Delivered OAuth My Drive uploads with resumable chunked transfers, plus folder create, multi-select soft delete with cascade, Recycle Bin restore, and permanent delete through MSSQL stored procedures.",
+    stack: ["React.js", "Node.js", "Express.js", "MSSQL", "Google Drive API", "OAuth"],
     features: [
-      "Excel-to-PDF barcode-based document mapping",
-      "10,000+ files with optimized search",
-      "Dynamic folder structure with CRUD operations",
-      "PDF report generation",
+      "Google Drive OAuth uploads to My Drive with resumable chunked transfers",
+      "Progress tracking, retry, and cancel for large uploads",
+      "Legacy server and SFTP files continue to open through existing URLs",
+      "Folder create, multi-select soft delete with cascade, and Recycle Bin restore and permanent delete",
     ],
   },
   {
@@ -365,42 +423,38 @@ export const experience = [
     role: "Full Stack Developer",
     duration: "Dec 2023 - Present",
     responsibilities: [
-      "Developed responsive and reusable React.js components using Redux Toolkit, Context API, React Router, and Material UI to build maintainable enterprise application interfaces.",
-      "Integrated React.js frontends with RESTful Node.js APIs, implementing form handling, state management, validation, and responsive user workflows across enterprise applications.",
-      "Engineered and scaled a multi-tenant SaaS CRM platform (CRM Emperor) supporting Real Estate, Billing, CMS, and Admin modules for multiple clients using isolated tenant databases.",
-      "Built and optimized 80+ RESTful API modules using Node.js and Express with request validation, structured error handling, standardized responses, and scalable API design.",
-      "Implemented JWT/AES authentication, CORS, Helmet.js, XSS prevention, and RBAC-based menu authorization for secure, role-scoped access across modules and API endpoints.",
-      "Optimized backend workflows and MSSQL queries, reducing API response time by ~30% and critical query execution time by ~40% across key operations.",
-      "Optimized React.js components and frontend workflows to improve rendering performance, responsiveness, and maintainability across enterprise applications.",
-      "Ensured responsive and cross-browser compatible React interfaces while following accessibility practices for consistent user experiences.",
-      "Gained hands-on experience implementing unit tests using Jest for Node.js services and Jest with React Testing Library (RTL) for React components, improving understanding of code reliability and test coverage.",
-      "Managed Git-based development workflows using Azure DevOps, including branch creation, pull requests, code reviews, and controlled code merging.",
-      "Participated in sprint planning, daily stand-ups, task estimation, code reviews, and sprint retrospectives.",
-      "Collaborated with QA, frontend/backend developers, and project teams to understand requirements, troubleshoot issues, and deliver application features.",
+      "Developed responsive and reusable React.js components using Redux Toolkit, Context API, React Router, and Material UI, and integrated them with RESTful Node.js APIs for form handling, state management, validation, and enterprise workflows.",
+      "Engineered and scaled a multi-tenant SaaS CRM platform (CRM Emperor) supporting Real Estate, Billing, CMS, and Admin modules for multiple clients using isolated tenant databases with secure tenant-level data isolation.",
+      "Designed, developed, and optimized 80+ RESTful API modules using Node.js and Express, with request validation, structured error handling, standardized responses, and scalable API workflows.",
+      "Designed and implemented JWT/AES authentication, CORS, Helmet.js, XSS prevention, and RBAC-based authorization for secure, role-scoped access across modules and API endpoints.",
+      "Improved MSSQL queries, backend workflows, and React.js components, reducing API response time by ~30% and critical query execution time by ~40%.",
+      "Implemented unit tests with Jest for Node.js services and Jest with React Testing Library for React components.",
+      "Managed Git-based development on Azure DevOps, including branching, pull requests, code reviews, and merging, and took part in Agile/Scrum ceremonies with QA and development teams.",
+      "Used Cursor, Google Antigravity, and ChatGPT to generate and refactor code, troubleshoot issues, and speed up delivery through structured prompt engineering.",
     ],
     details:
-      "Project experience across SaaS CRM, logistics and delivery, billing and inventory, healthcare, document management, and loan processing platforms using React.js, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, and third-party APIs.",
+      "Project experience across SaaS CRM, logistics and delivery, billing and inventory, healthcare, document management, and loan processing platforms using React.js, TypeScript, Node.js, Express.js, MSSQL, Redis, Firebase, AWS S3, Google Drive, and third-party APIs.",
     impact:
-      "Delivered 80+ REST API modules, ~30% faster APIs, ~40% faster critical SQL queries, multi-tenant SaaS CRM workflows, secure JWT/RBAC access, and unit tests with Jest and React Testing Library.",
+      "Delivered 80+ REST API modules, ~30% faster APIs, ~40% faster critical SQL queries, multi-tenant SaaS CRM workflows, secure JWT/RBAC access, hybrid Google Drive document management, and unit tests with Jest and React Testing Library.",
     technologies:
-      "React.js, Redux Toolkit, Node.js, Express.js, GraphQL, MSSQL, Jest, React Testing Library, Redis, Firebase, AWS S3, Azure DevOps, Git",
+      "React.js, Redux Toolkit, TypeScript, Node.js, Express.js, GraphQL, MSSQL, PostgreSQL, Jest, React Testing Library, Redis, Firebase, AWS S3, Docker, Azure DevOps, Git",
     projects: [
-      "CRM Emperor: Engineered and scaled a multi-tenant SaaS CRM with Real Estate, Billing, CMS, and Admin modules, responsive React.js interfaces, 80+ RESTful APIs, JWT/AES authentication, RBAC authorization, and optimized MSSQL workflows.",
-      "Haulerr: Developed responsive React.js interfaces for order management and rider tracking, deployed a logistics platform with real-time tracking, GST/IGST fare logic, Google Maps polygon zones, and WhatsApp webhook notifications.",
-      "Fusion Pizza: Engineered a billing and inventory system with real-time GST computation, PDF invoices, multi-outlet inventory dashboards, audit logs, and compliance reporting.",
-      "IVF Management System – Esha IVF: Built a healthcare platform for patient lifecycle, appointments, and lab workflows supporting 200+ daily operations with Firebase, WhatsApp automation, and secure admin dashboards.",
-      "File Manager System: Built barcode-based Excel-to-PDF document mapping for 10,000+ files with dynamic folder CRUD operations and optimized search.",
-      "Loan Processing Module: Developed a multi-step loan workflow handling 100+ applications daily with approval hierarchy, AWS S3 uploads, borrower/surety management, notifications, and PDF generation.",
+      "CRM Emperor: Engineered and scaled a multi-tenant SaaS CRM with Real Estate, Billing, CMS, and Admin modules, isolated tenant databases, responsive React.js interfaces, 80+ RESTful APIs, JWT/AES authentication, RBAC authorization, and optimized MSSQL workflows.",
+      "Haulerr: Designed and deployed a logistics and delivery platform with responsive React.js interfaces, RESTful Node.js APIs, real-time rider tracking, GST/IGST fare calculation, Google Maps polygon zones, and WhatsApp OTP and webhook notifications.",
+      "Fusion Pizza: Engineered a billing and inventory system with real-time GST computation, PDF invoice generation, multi-outlet inventory tracking, audit logs, and compliance reporting.",
+      "IVF Management System – Esha IVF: Developed a healthcare platform for patient lifecycle, appointments, and lab workflows supporting 200+ daily patient workflows, with Firebase and WhatsApp communication and secure admin dashboards.",
+      "File Manager System: Delivered a hybrid document module where new uploads go to Google Drive via OAuth with resumable chunked uploads, progress, retry, and cancel, while legacy server and SFTP files keep working. Added folder create, multi-select soft delete with cascade, and Recycle Bin restore and permanent delete through MSSQL stored procedures.",
+      "Loan Processing Module: Developed a multi-step loan workflow handling 100+ applications daily with an approval hierarchy, AWS S3 document uploads, borrower and surety management, notification workflows, and PDF generation.",
     ],
   },
   {
     company: "Shersmart Infotech, Ahmedabad",
-    role: "Intern",
+    role: "Frontend Developer / Intern",
     duration: "Jan 2023 - Dec 2023",
     details:
-      "Developed reusable responsive UI components with React.js and Material UI, and implemented CRUD workflows through REST APIs for maintainable frontend development.",
+      "Intern from Jan 2023 to Jun 2023 and full-time from Jul 2023 to Dec 2023. Developed reusable React.js and Material UI components and implemented CRUD workflows through REST APIs.",
     impact:
-      "Used React Hooks and state management to improve UI performance, responsiveness, and maintainability through reusable component design and optimized frontend workflows.",
+      "Used React Hooks and state management to improve frontend responsiveness and maintainability.",
     technologies: "React.js, Material UI, REST APIs, React Hooks, JavaScript",
   },
   {
@@ -408,9 +462,9 @@ export const experience = [
     role: "Intern",
     duration: "Jul 2022 - Dec 2022",
     details:
-      "Learned and applied Object-Oriented Programming concepts in Python, including classes, objects, inheritance, polymorphism, and encapsulation.",
+      "Applied Python OOP concepts including inheritance, polymorphism, and encapsulation.",
     impact:
-      "Gained hands-on experience with NumPy, Pandas, and other Python libraries for data manipulation, analysis, and problem-solving using the Python interpreter.",
+      "Used NumPy and Pandas for data manipulation, analysis, and problem-solving.",
     technologies: "Python, OOP, NumPy, Pandas",
   },
   {
@@ -418,9 +472,9 @@ export const experience = [
     role: "Intern",
     duration: "Jan 2022 - Apr 2022",
     details:
-      "Developed a Bank Statement Analyzer web application to automate extraction, analysis, and visualization of financial statements.",
+      "Developed a Bank Statement Analyzer to automate extraction, analysis, and visualization of financial statements.",
     impact:
-      "Built the application using Python, Flask, Pandas, NumPy, and SQLAlchemy with Dash and Matplotlib visualizations, plus PDF-to-CSV conversion, user authentication, and real-time analytics for creditworthiness assessment.",
+      "Built it with Python, Flask, Pandas, NumPy, SQLAlchemy, Dash, and Matplotlib, including PDF-to-CSV conversion, authentication, data visualization, and real-time financial analytics.",
     technologies: "Python, Flask, Pandas, NumPy, SQLAlchemy, Dash, Matplotlib",
   },
 ];
@@ -437,6 +491,4 @@ export const education = [
 export const certifications = [
   "Diploma in Multilingual Computer Programming (C-DAC) | Jan 2019 - Jul 2019",
   "HTML, CSS, JavaScript, React – Online Certification Course",
-  "React - The Complete Guide (incl. Hooks, React Router, Redux) – Udemy",
-  "Udemy Python for Data Science and Data Analysis",
 ];
