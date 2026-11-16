@@ -15,7 +15,7 @@ import { ProfileAvatar } from "./profile-avatar";
 const services = [
   {
     title: "Frontend Development",
-    text: "Building responsive and reusable React.js interfaces with Redux Toolkit, Context API, React Router, and Material UI.",
+    text: "Building responsive React.js and TypeScript interfaces with Redux Toolkit, Context API, React Router, Material UI, and Tailwind CSS.",
     icon: "frontend",
   },
   {
@@ -25,23 +25,28 @@ const services = [
   },
   {
     title: "Database Optimization",
-    text: "Creating efficient MSSQL and MySQL schemas, stored procedures, and optimized queries with measurable performance gains.",
+    text: "Creating efficient MSSQL, MySQL, and PostgreSQL schemas, stored procedures, and optimized queries with measurable performance gains.",
     icon: "database",
   },
   {
-    title: "SaaS Architecture",
-    text: "Developing multi-tenant and microservices-ready platforms with isolated tenant databases, RBAC authorization, and modular enterprise workflows.",
+    title: "SaaS & Microservices",
+    text: "Developing multi-tenant platforms and event-driven services with Kafka, a transactional outbox, idempotent consumers, and an API gateway.",
     icon: "saas",
   },
   {
     title: "API Integrations",
-    text: "Integrating Google Maps, WhatsApp Business API, Firebase, AWS S3, webhooks, and third-party services into production apps.",
+    text: "Integrating Google Maps, Google Drive, WhatsApp Business API, Firebase, AWS S3, Razorpay, and signed webhooks into production apps.",
     icon: "integration",
   },
   {
     title: "Testing & DevOps",
-    text: "Writing Jest and React Testing Library unit tests, plus Git, Azure DevOps, pull requests, CI/CD pipelines, and Agile/Scrum workflows.",
-    icon: "realtime",
+    text: "Writing Jest and React Testing Library unit tests, and shipping with Git, Azure DevOps, Docker, GitHub Actions, and Agile/Scrum.",
+    icon: "devops",
+  },
+  {
+    title: "AI-Assisted Development",
+    text: "Using Cursor, Google Antigravity, and ChatGPT for code generation, refactoring, debugging, and faster delivery.",
+    icon: "ai",
   },
 ];
 
@@ -73,7 +78,7 @@ export function HeroSection() {
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <h1 className="display-title mt-2 max-w-3xl">
-            Full Stack Developer building scalable React and Node.js products.
+            Full Stack Developer building enterprise React, TypeScript, and Node.js products.
           </h1>
           <div className="mt-4 max-w-2xl space-y-4">
             {summaryParagraphs.map((paragraph) => (
@@ -141,7 +146,7 @@ export function HeroSection() {
             <HeroStat
               icon="globe"
               title="3 Years of Experience"
-              text="Delivered scalable full stack solutions across CRM, logistics, logistic, billing, and healthcare platforms."
+              text="Enterprise delivery across SaaS CRM, logistics, billing, healthcare, fintech, and event-driven booking platforms."
             />
           </div>
         </div>
@@ -198,7 +203,7 @@ export function WhyMeSection() {
           <p className="body-copy mt-5 max-w-md">
             Full Stack Developer at {company}, building SaaS CRM, logistics,
             billing, healthcare, document management, and loan processing
-            platforms with React.js, Node.js, Express.js, and MSSQL.
+            platforms with React.js, TypeScript, Node.js, and MSSQL.
           </p>
 
           <div className="mt-6 rounded-xl bg-white p-5 shadow-[0_16px_60px_rgba(15,23,42,0.06)]">
@@ -302,7 +307,9 @@ export function ProjectsSection() {
                 className="btn-primary mt-5 inline-flex items-center gap-2"
                 href={`/projects/${project.slug}`}
               >
-                View Shot
+                {"galleryImages" in project || "galleryModules" in project
+                  ? "View Shot"
+                  : "View Project"}
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
